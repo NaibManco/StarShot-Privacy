@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>StarShot 隐私政策 · StarShot</title>
+    <style>
+:root {
+  color-scheme: light dark;
+  --bg: #0b1019;
+  --text: #f5f4f1;
+  --muted: #b8b4ad;
+  --line: rgba(245, 244, 241, 0.14);
+  --accent: #d4a574;
+  --link: #f0c88e;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: radial-gradient(circle at 20% 0%, rgba(212, 165, 116, 0.14), transparent 34%), linear-gradient(180deg, #0b1019 0%, #090b10 100%);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Segoe UI", sans-serif;
+  line-height: 1.72;
+}
+.shell { width: min(880px, calc(100% - 40px)); margin: 0 auto; padding: 32px 0 56px; }
+nav { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-bottom: 24px; border-bottom: 1px solid var(--line); }
+.brand { font-size: 18px; font-weight: 700; color: var(--text); text-decoration: none; }
+.links { display: flex; gap: 14px; flex-wrap: wrap; }
+a { color: var(--link); }
+.links a { color: var(--muted); text-decoration: none; font-size: 14px; }
+.links a:hover { color: var(--accent); }
+main { padding-top: 28px; }
+h1, h2, h3, h4 { line-height: 1.25; letter-spacing: 0; }
+h1 { font-size: clamp(32px, 6vw, 52px); margin: 0 0 18px; }
+h2 { margin-top: 42px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--accent); }
+h3 { margin-top: 28px; }
+p, li { color: var(--muted); }
+strong { color: var(--text); }
+code { color: var(--text); background: rgba(255, 255, 255, 0.08); padding: 2px 5px; border-radius: 5px; }
+hr { border: 0; border-top: 1px solid var(--line); margin: 32px 0; }
+footer { margin-top: 44px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+@media (max-width: 640px) {
+  .shell { width: min(100% - 28px, 880px); padding-top: 22px; }
+  nav { align-items: flex-start; flex-direction: column; }
+}
+</style>
+  </head>
+  <body>
+    <div class="shell">
+      <nav>
+        <a class="brand" href="/StarShot-Privacy/">StarShot 星拍助手</a>
+        <div class="links">
+          <a href="/StarShot-Privacy/privacy/">隐私政策</a>
+          <a href="/StarShot-Privacy/support/">支持中心</a>
+        </div>
+      </nav>
+      <main>
+<h1>StarShot 隐私政策</h1>
+<p><strong>更新日期：2026 年 4 月 30 日</strong></p>
+<h2>1. 关于本应用</h2>
+<p>StarShot（星拍助手）是一款面向广角星野 / 银河摄影爱好者的出行决策辅助应用。<strong>纯客户端架构</strong>，没有自有服务器、没有用户账号、没有广告 SDK、没有第三方 analytics。</p>
+<h2>2. 我们收集的信息</h2>
+<p><strong>位置信息</strong>：在您授权后，应用通过系统 CoreLocation 读取您的当前 GPS 坐标，用于计算您与暗夜观测点的距离、为您筛选附近候选站点、以及在地图页定位您的位置。</p>
+<p>应用<strong>不</strong>收集：设备唯一标识符、IP 地址（除您主动调用第三方 API 时由对方服务器记录的常规访问日志）、广告标识符、通讯录、相册、麦克风、相机或健康数据。</p>
+<p>应用<strong>没有用户账号体系</strong>——无需注册、无需登录、无个人资料。</p>
+<h2>3. 信息的使用</h2>
+<p>您的 GPS 坐标会用于：</p>
+<ul>
+<li>按距离 + Bortle 等级排序候选暗夜点</li>
+<li>计算您与各候选点的直线距离</li>
+<li>在地图页绘制您的当前位置标记</li>
+<li>作为天气 / 大气透明度 / 驾车路线查询参数发送给下方列明的第三方服务</li>
+</ul>
+<p>本应用<strong>不会</strong>将您的位置上传到任何 StarShot 自有服务器（因为不存在这样的服务器），也不会把坐标与账号、设备标识或广告标识关联。</p>
+<h2>4. 第三方服务</h2>
+<p>为提供天气与天文数据，本应用会请求以下第三方公开 API。我们仅发送<strong>坐标参数</strong>，不发送任何账号、设备标识或个人识别信息。这些第三方按其自身隐私政策处理请求：</p>
+<ul>
+<li><strong>Open-Meteo</strong>（<code>api.open-meteo.com</code>）：发送候选暗夜点坐标 / 用户当前坐标，用于查询云量预报。<a href="https://open-meteo.com/en/terms#data-protection">Open-Meteo Privacy Policy</a></li>
+<li><strong>7Timer!</strong>（<code>www.7timer.info</code>）：发送最佳候选暗夜点坐标，用于查询大气透明度与视宁度。</li>
+<li><strong>RainViewer</strong>（<code>api.rainviewer.com</code> / <code>tilecache.rainviewer.com</code>）：请求卫星红外瓦片，请求中<strong>不包含您的坐标</strong>（瓦片按地图视图区域请求）。<a href="https://www.rainviewer.com/api/privacy-policy.html">RainViewer Privacy Policy</a></li>
+<li><strong>djlorenz VIIRS 光污染瓦片</strong>：请求静态光污染瓦片，<strong>不包含个人信息</strong>。</li>
+<li><strong>Apple Maps（MKDirections）</strong>：发送您的位置 + 暗夜点坐标，用于计算实际驾车路线时长。受 <a href="https://www.apple.com/legal/privacy/">Apple 隐私政策</a> 约束。</li>
+</ul>
+<h2>5. 本地数据存储</h2>
+<p>应用使用 SwiftData / UserDefaults 在<strong>您的设备本地</strong>缓存以下数据，不会上传到任何服务器：</p>
+<ul>
+<li>候选暗夜点的天气预报（缓存最长 12 小时）</li>
+<li>实际驾车时长（缓存 24 小时）</li>
+<li>大气透明度（缓存最长 6 小时）</li>
+<li>您的应用偏好（主题、最大车程、拍摄经验）</li>
+</ul>
+<p>卸载应用时，所有本地数据随之删除。</p>
+<h2>6. 您的选择</h2>
+<p><strong>位置权限</strong>：可随时在 <em>系统设置 → 隐私与安全 → 定位服务 → StarShot</em> 关闭。关闭后应用降级为「使用默认位置评估」模式（默认坐标位于北京附近），首页会显示提示。</p>
+<p><strong>清除本地数据</strong>：删除并重新安装应用即可清除所有本地缓存。</p>
+<h2>7. 儿童隐私</h2>
+<p>本应用面向成人摄影爱好者，不针对 13 岁以下儿童。我们不会主动收集任何儿童信息。</p>
+<h2>8. 政策变更</h2>
+<p>如未来涉及数据流的实质性变化（例如新增需要发送坐标的第三方 API），我们会更新本页面顶部的「更新日期」，并在应用版本更新说明中告知。</p>
+<h2>联系我们</h2>
+<p>如对本隐私政策有疑问，请通过应用内「设置 → 关于 → 问题反馈」联系我们，或发邮件至 1162558327@qq.com。</p>
+<hr>
+<h1>Privacy Policy (English)</h1>
+<p><strong>Last updated: April 30, 2026</strong></p>
+<h2>1. About this app</h2>
+<p>StarShot is a Milky Way / astrophotography trip planner. <strong>Pure client-side architecture</strong>, no proprietary servers, no user accounts, no advertising SDKs, no third-party analytics.</p>
+<h2>2. Data we collect</h2>
+<p><strong>Location</strong>: With your permission, the app reads your current GPS coordinates via CoreLocation. Used solely to (a) compute distance to dark-sky observation points, (b) filter nearby candidates, (c) draw your location on the map.</p>
+<p>We do <strong>not</strong> collect: device identifiers, IP addresses (beyond standard third-party API server logs), advertising identifiers, contacts, photos, microphone, camera, or health data.</p>
+<p>There is <strong>no user account system</strong>—no registration, no login, no profile.</p>
+<h2>3. How we use it</h2>
+<p>Your GPS coordinates are used for:</p>
+<ul>
+<li>Sorting candidate dark-sky sites by distance + Bortle level</li>
+<li>Calculating great-circle distance to each candidate</li>
+<li>Drawing your location marker on the map</li>
+<li>Sending weather / transparency / driving-route query parameters to the third-party services listed below</li>
+</ul>
+<p>We do <strong>not</strong> upload your location to any StarShot-owned server (no such server exists), and we do not associate coordinates with an account, device identifier, or advertising identifier.</p>
+<h2>4. Third-party services</h2>
+<p>The following public APIs receive <strong>only coordinate parameters</strong>, no account / device identifiers:</p>
+<ul>
+<li><strong>Open-Meteo</strong> — cloud cover forecast</li>
+<li><strong>7Timer!</strong> — atmospheric transparency / seeing</li>
+<li><strong>RainViewer</strong> — satellite IR tiles (no coordinates sent; tiles requested by map viewport)</li>
+<li><strong>djlorenz VIIRS</strong> — static light pollution tiles (no personal info)</li>
+<li><strong>Apple Maps (MKDirections)</strong> — driving routes</li>
+</ul>
+<h2>5. Local storage</h2>
+<p>SwiftData / UserDefaults on your device:</p>
+<ul>
+<li>Weather forecasts (12h TTL)</li>
+<li>Drive times (24h TTL)</li>
+<li>Atmospheric transparency (6h TTL)</li>
+<li>Your app preferences (theme, max drive hours, photography experience)</li>
+</ul>
+<p>Uninstalling the app clears all local data.</p>
+<h2>6. Your choices</h2>
+<ul>
+<li><strong>Location permission</strong>: revoke any time in <em>Settings → Privacy &amp; Security → Location Services → StarShot</em>. App falls back to &quot;default-location assessment&quot; mode (default coordinates near Beijing).</li>
+<li><strong>Clear local data</strong>: uninstall and reinstall.</li>
+</ul>
+<h2>7. Children&#x27;s privacy</h2>
+<p>The app targets adult photographers and does not knowingly collect data from children under 13.</p>
+<h2>8. Policy changes</h2>
+<p>We will update the &quot;Last updated&quot; date and announce in the version update notes if data flows change substantially.</p>
+<h2>Contact</h2>
+<p>In-app <em>Settings → About → Feedback</em>, or email 1162558327@qq.com.</p>
+      </main>
+      <footer>© 2026 NaibManco. StarShot is an independent app for Milky Way and night-sky photography planning.</footer>
+    </div>
+  </body>
+</html>
